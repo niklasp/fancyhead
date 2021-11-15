@@ -37,7 +37,7 @@ export default class Sketch {
     } );
 
     this.renderer.setSize( this.width, this.height );
-    this.renderer.setClearColor(0xeeeeee, 1);
+    this.renderer.setClearColor(0x000000, 1);
     this.container.appendChild( this.renderer.domElement );
 
     this.controls = new OrbitControls( this.camera, this.renderer.domElement );
