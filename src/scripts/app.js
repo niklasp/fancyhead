@@ -82,6 +82,7 @@ export default class Sketch {
       model,
       ( gltf ) => {
         console.log( 'hello', gltf );
+        this.model = gltf.scene;
         this.scene.add( gltf.scene );
         gltf.scene.scale.set( 0.5, 0.5, 0.5 );
 
@@ -98,8 +99,10 @@ export default class Sketch {
   render() {
     this.time += 0.05;
     this.material.uniforms.u_time.value = this.time;
-    // this.mesh.rotation.x = this.time / 20;
-    // this.mesh.rotation.y = this.time / 10;
+    if ( this.model ) {
+      // this.model.rotation.x = this.time / 20;
+      this.model.rotation.y = this.time / 10;
+    }
 
     this.renderer.render( this.scene, this.camera );
     window.requestAnimationFrame( this.render.bind( this ) );
