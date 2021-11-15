@@ -101,7 +101,7 @@ export default class Sketch {
     this.material.uniforms.u_time.value = this.time;
     if ( this.model ) {
       // this.model.rotation.x = this.time / 20;
-      this.model.rotation.y = this.time / 10;
+      // this.model.rotation.y = this.time / 10;
     }
 
     this.renderer.render( this.scene, this.camera );
